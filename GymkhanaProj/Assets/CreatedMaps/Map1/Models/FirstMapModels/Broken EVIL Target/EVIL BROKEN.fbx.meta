@@ -1,0 +1,131 @@
+fileFormatVersion: 2
+guid: f5a66a6cf1d01f842b0f05bbfdc83313
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: EVIL BROKEN1
+    100002: EVIL BROKEN2
+    100004: EVIL BROKEN3
+    100006: EVIL BROKEN4
+    100008: EVIL BROKEN5
+    100010: EVIL BROKEN6
+    100012: EVIL BROKEN7
+    100014: EVIL BROKEN8
+    100016: //RootNode
+    400000: EVIL BROKEN1
+    400002: EVIL BROKEN2
+    400004: EVIL BROKEN3
+    400006: EVIL BROKEN4
+    400008: EVIL BROKEN5
+    400010: EVIL BROKEN6
+    400012: EVIL BROKEN7
+    400014: EVIL BROKEN8
+    400016: //RootNode
+    2100000: EVIL
+    2300000: EVIL BROKEN1
+    2300002: EVIL BROKEN2
+    2300004: EVIL BROKEN3
+    2300006: EVIL BROKEN4
+    2300008: EVIL BROKEN5
+    2300010: EVIL BROKEN6
+    2300012: EVIL BROKEN7
+    2300014: EVIL BROKEN8
+    3300000: EVIL BROKEN1
+    3300002: EVIL BROKEN2
+    3300004: EVIL BROKEN3
+    3300006: EVIL BROKEN4
+    3300008: EVIL BROKEN5
+    3300010: EVIL BROKEN6
+    3300012: EVIL BROKEN7
+    3300014: EVIL BROKEN8
+    4300000: EVIL BROKEN8
+    4300002: EVIL BROKEN7
+    4300004: EVIL BROKEN6
+    4300006: EVIL BROKEN5
+    4300008: EVIL BROKEN4
+    4300010: EVIL BROKEN3
+    4300012: EVIL BROKEN2
+    4300014: EVIL BROKEN1
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 2
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
