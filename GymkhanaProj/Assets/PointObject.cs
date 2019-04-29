@@ -3,12 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PointObject : MonoBehaviour {
+    [SerializeField]
+    bool ball;
     public int value;
     public GameObject dead, toDisable;
-	// Use this for initialization
-	void Start () {
-		
-	}
+    GameController main;
+
+
+    // Use this for initialization
+    void Start () {
+        main = GameController.instance;
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -36,12 +42,22 @@ public class PointObject : MonoBehaviour {
             {
                 GameController.instance.p2Plus.SetActive(true);
             }
+
             dead.SetActive(true);
             toDisable.SetActive(false);
             //SpawnSystem.instance.Respawn(this.transform);
-            other.GetComponent<RCC_CameraConfig>().points += value;
+            if (!ball)
+            {
+                other.GetComponent<RCC_CameraConfig>().points += value * main.CounterPoints;
+                main.CounterPoints++;
+            }
             transform.parent.GetComponent<PointScript>().busy = false;
+            if(!ball)
             Destroy(gameObject,0.5f);
+            if (ball)
+            {
+                other.GetComponent<RCC_CameraConfig>().points += value;
+            }
         }
     }
 }

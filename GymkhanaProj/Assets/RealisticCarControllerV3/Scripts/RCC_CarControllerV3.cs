@@ -320,6 +320,7 @@ public class RCC_CarControllerV3 : MonoBehaviour {
 	public bool useTurbo = false;
 
 	private RCC_Camera carCamera;
+    RCC_CameraConfig camConf;
 
 	// EVENTS
 
@@ -330,9 +331,9 @@ public class RCC_CarControllerV3 : MonoBehaviour {
 	public static event onRCCAISpawned OnRCCAISpawned;
 
 	void Awake (){
-
-		// Overriding Fixed TimeStep.
-		if(RCCSettings.overrideFixedTimeStep)
+        camConf = GetComponent<RCC_CameraConfig>();
+        // Overriding Fixed TimeStep.
+        if (RCCSettings.overrideFixedTimeStep)
 			Time.fixedDeltaTime = RCCSettings.fixedTimeStep;
 
 		// Getting Rigidbody and settings.
@@ -807,11 +808,11 @@ public class RCC_CarControllerV3 : MonoBehaviour {
 		}
 
 	}
-   
+
 	void Update (){
        
 
-        if (canControl){
+            if (canControl){
 			if(!AIController)
 				Inputs();
 		}else if(!AIController){
@@ -1487,15 +1488,17 @@ public class RCC_CarControllerV3 : MonoBehaviour {
 				return; 
 			
 			if(transform.eulerAngles.z < 300 && transform.eulerAngles.z > 60){
-				resetTime += Time.deltaTime;
+                
+                resetTime += Time.deltaTime;
 				if(resetTime > 3){
 					transform.rotation = Quaternion.Euler (0f, transform.eulerAngles.y, 0f);
-					transform.position = new Vector3(transform.position.x, transform.position.y + 3, transform.position.z);
+					transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
 					resetTime = 0f;
 				}
 			}
-			
-		}
+          
+
+        }
 		
 	}
 	

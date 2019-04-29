@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
-  
+    public int SECONDS;
     public GameObject ResumeButton;
     public GameObject TimeOver;
     bool multi;
@@ -27,6 +27,28 @@ public class GameController : MonoBehaviour {
     bool levelOver;
     [HideInInspector]
    public AudioSource[] sources;
+   
+
+    private int counterPoints;
+    public int CounterPoints { get { return counterPoints; }
+
+        set
+        {
+            CancelInvoke();
+            counterPoints = value;
+            if (counterPoints > 1)
+                Invoke("ResetPoints", SECONDS);
+        }
+
+    }
+    void ResetPoints()
+    {
+        
+        CounterPoints = 1;
+    }
+
+
+
     void OnEnable()
     {
 
@@ -54,6 +76,7 @@ public class GameController : MonoBehaviour {
     }
     // Use this for initialization
     void Start () {
+        CounterPoints = 1;
         levelOver = false;
         Time.timeScale = 1;
         p1Plus = GameObject.FindGameObjectWithTag("PlayerOnePlus");
@@ -147,7 +170,10 @@ public class GameController : MonoBehaviour {
 
     // Update is called once per frame
     void Update()
-    {if (PauseCanvas.activeSelf == true)
+    {
+        Debug.Log(CounterPoints);
+
+        if (PauseCanvas.activeSelf == true)
         {
             AudioListener.volume = 0;
                Time.timeScale = 0;

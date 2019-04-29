@@ -9,6 +9,7 @@ TagManager:
   - PlayerOneMinus
   - PlayerTwoMinus
   - PlayerTwoPlus
+  - DriftGate
   layers:
   - Default
   - TransparentFX
