@@ -302,7 +302,8 @@ public class RCC_CarControllerV3 : MonoBehaviour {
 
 	// Drift Variables
 	internal float driftAngle = 0f;
-	internal bool driftingNow = false;
+    public bool IsDrifting = false;
+    internal bool driftingNow = false;
 	public bool applyCounterSteering = true;		// Applies counter steering when vehicle is drifting. It helps to keep the control fine of the vehicle.
 
 	// Used For ESP
@@ -1477,10 +1478,23 @@ public class RCC_CarControllerV3 : MonoBehaviour {
 			driftingNow = true;
 		else
 			driftingNow = false;
+
+        if (!driftingNow)
+            Invoke("driftingNowFalse", 1);
+        if (driftingNow)
+        {
+            CancelInvoke();
+            IsDrifting = true;
+        }
 		
 	}
-	
-	void ResetCar (){
+    void driftingNowFalse()
+    {
+        IsDrifting = false;
+    }
+
+
+    void ResetCar (){
 		
 		if(speed < 5 && !rigid.isKinematic){
 

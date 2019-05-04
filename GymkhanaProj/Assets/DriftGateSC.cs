@@ -20,7 +20,7 @@ public class DriftGateSC : MonoBehaviour {
         if (other.GetComponent<RCC_CarControllerV3>())
         {
             RCC_CarControllerV3 car = other.GetComponent<RCC_CarControllerV3>();
-            if (car.driftingNow)
+            if (car.IsDrifting)
             {
                 
                 other.GetComponent<RCC_CameraConfig>().points += value;
