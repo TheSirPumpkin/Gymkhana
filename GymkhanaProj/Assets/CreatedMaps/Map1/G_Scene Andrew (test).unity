@@ -28353,6 +28353,21 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114818103796667694, guid: db971f17b1ff7ce44a5d321179ba1b7c,
+        type: 2}
+      propertyPath: automatic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114818103796667694, guid: db971f17b1ff7ce44a5d321179ba1b7c,
+        type: 2}
+      propertyPath: distance
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114818103796667694, guid: db971f17b1ff7ce44a5d321179ba1b7c,
+        type: 2}
+      propertyPath: height
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db971f17b1ff7ce44a5d321179ba1b7c, type: 2}
   m_IsPrefabAsset: 0
@@ -54267,6 +54282,21 @@ Prefab:
     - target: {fileID: 1849766441641762, guid: db971f17b1ff7ce44a5d321179ba1b7c, type: 2}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114818103796667694, guid: db971f17b1ff7ce44a5d321179ba1b7c,
+        type: 2}
+      propertyPath: automatic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114818103796667694, guid: db971f17b1ff7ce44a5d321179ba1b7c,
+        type: 2}
+      propertyPath: distance
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114818103796667694, guid: db971f17b1ff7ce44a5d321179ba1b7c,
+        type: 2}
+      propertyPath: height
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db971f17b1ff7ce44a5d321179ba1b7c, type: 2}
@@ -84830,11 +84860,11 @@ Prefab:
       objectReference: {fileID: 2100000, guid: 98ac54c8fe87ecb4681a9a9aed682692, type: 2}
     - target: {fileID: 1875401347152738, guid: 9ca41321ab2e10243b402fe0cec2e488, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1975765666445038, guid: 9ca41321ab2e10243b402fe0cec2e488, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1283699462781160, guid: 9ca41321ab2e10243b402fe0cec2e488, type: 2}
       propertyPath: m_TagString
