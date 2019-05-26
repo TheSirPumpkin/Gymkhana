@@ -858,7 +858,7 @@ public class RCC_CarControllerV3 : MonoBehaviour {
                     gasInput = Input.GetAxis(RCCSettings.verticalInput);
                     brakeInput = Mathf.Clamp01(-Input.GetAxis(RCCSettings.verticalInput));
                     steerInput = Input.GetAxis(RCCSettings.horizontalInput);
-                    //handbrakeInput = Input.GetKey(RCCSettings.handbrakeKB) ? 1f : 0f;
+                    handbrakeInput = Input.GetKey(RCCSettings.handbrakeKB) ? 1f : 0f;
 			        //boostInput = Input.GetKey(RCCSettings.boostKB) ? 2.5f : 1f;
                 }
                 if (player == 2)
@@ -866,7 +866,7 @@ public class RCC_CarControllerV3 : MonoBehaviour {
                     gasInput = Input.GetAxis(RCCSettings.verticalInput2);
                     brakeInput = Mathf.Clamp01(-Input.GetAxis(RCCSettings.verticalInput2));
                     steerInput = Input.GetAxis(RCCSettings.horizontalInput2);
-                    //handbrakeInput = Input.GetKey(RCCSettings.handbrakeKB2) ? 1f : 0f;
+                    handbrakeInput = Input.GetKey(RCCSettings.handbrakeKB2) ? 1f : 0f;
                     //..boostInput = Input.GetKey(RCCSettings.boostKB2) ? 2.5f : 1f;
                 }
    //             if (Input.GetKeyDown(RCCSettings.lowBeamHeadlightsKB)){

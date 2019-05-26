@@ -40,10 +40,10 @@ public class RCC_Settings : ScriptableObject {
 	public string horizontalInput = "Horizontal";
     public string verticalInput2 = "Vertical2";
     public string horizontalInput2 = "Horizontal2";
-    //public KeyCode handbrakeKB = KeyCode.Space;
+    public KeyCode handbrakeKB = KeyCode.Space;
 	//public KeyCode startEngineKB = KeyCode.I;
 
-    //public KeyCode handbrakeKB2 = KeyCode.RightShift;
+    public KeyCode handbrakeKB2 = KeyCode.RightShift;
     //public KeyCode startEngineKB2 = KeyCode.P;
 
     //public KeyCode lowBeamHeadlightsKB = KeyCode.L;
