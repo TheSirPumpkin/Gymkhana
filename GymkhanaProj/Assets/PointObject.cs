@@ -42,8 +42,8 @@ public class PointObject : MonoBehaviour {
             {
                 GameController.instance.p2Plus.SetActive(true);
             }
-
-            dead.SetActive(true);
+            if (!ball)
+                dead.SetActive(true);
             toDisable.SetActive(false);
             //SpawnSystem.instance.Respawn(this.transform);
             if (!ball)
@@ -51,7 +51,8 @@ public class PointObject : MonoBehaviour {
                 other.GetComponent<RCC_CameraConfig>().points += value * main.CounterPoints;
                 main.CounterPoints++;
             }
-            transform.parent.GetComponent<PointScript>().busy = false;
+            if (!ball)
+                transform.parent.GetComponent<PointScript>().busy = false;
             if(!ball)
             Destroy(gameObject,0.5f);
             if (ball)
