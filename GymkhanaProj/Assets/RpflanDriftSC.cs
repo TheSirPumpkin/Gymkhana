@@ -4,26 +4,51 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class RpflanDriftSC : MonoBehaviour {
+    public int circleCurrent, circlesMax;
     public float MyPoints, MaxPoints;
     public Image[] Images;
     public GameObject ImageHolder;
+    public Text pointsTxt;
     private void OnTriggerStay(Collider other)
     {
         if (other.GetComponent<RCC_CarControllerV3>())
         {
             ImageHolder.SetActive(true);
                RCC_CarControllerV3 car = other.GetComponent<RCC_CarControllerV3>();
-            if (car.IsDrifting)
+
+            if (!car.IsDrifting && circleCurrent < circlesMax)
+            {
+                pointsTxt.gameObject.SetActive(true);
+                pointsTxt.text = "+" + MyPoints + "!!!";
+                circleCurrent += 1; ResetTrigger(); foreach (Image i in Images)
+                i.fillAmount = 0;
+                ImageHolder.SetActive(false);
+                MyPoints = 0;
+            }
+
+            if (car.IsDrifting&&circleCurrent<circlesMax)
             {
 
                 other.GetComponent<RCC_CameraConfig>().points++;
                 MyPoints++;
-                    if(MyPoints< MaxPoints/3)
-                { Images[0].fillAmount += Time.deltaTime / 20; }
-                    if (MyPoints < MaxPoints / 2 &&MyPoints > MaxPoints / 3)
-                { Images[1].fillAmount += Time.deltaTime / 20; }
-                        if (MyPoints < MaxPoints && MyPoints > MaxPoints / 2)
-                { Images[2].fillAmount += Time.deltaTime / 20; }
+                 if(MyPoints< MaxPoints/3)
+                { Images[0].fillAmount += Time.deltaTime / 9.8f; }
+                if (MyPoints < ( (MaxPoints / 3) +  (MaxPoints / 3)) && MyPoints > MaxPoints / 3)
+                { Images[1].fillAmount += Time.deltaTime / 9.8f; }
+                if (MyPoints < MaxPoints && MyPoints > (MaxPoints / 3) + (MaxPoints / 3))
+                { Images[2].fillAmount += Time.deltaTime / 9.8f; }
+
+
+                if (MyPoints == MaxPoints / 3)
+                { pointsTxt.gameObject.SetActive(true); pointsTxt.text = "+" + (MaxPoints / 3) + "!!!"; }
+                if (MyPoints== ((MaxPoints / 3) + (MaxPoints / 3)))
+                { pointsTxt.gameObject.SetActive(true); pointsTxt.text = "+" + ((MaxPoints / 3) + (MaxPoints / 3)) + "!!!"; }
+                if (MyPoints == MaxPoints)
+                { pointsTxt.gameObject.SetActive(true); pointsTxt.text = "+" + MaxPoints + "!!!"; circleCurrent+=1; ResetTrigger(); foreach (Image i in Images)
+                        i.fillAmount = 0;
+                    ImageHolder.SetActive(false);
+                    MyPoints = 0;
+                }
             }
          
         }
@@ -32,11 +57,29 @@ public class RpflanDriftSC : MonoBehaviour {
     private void OnTriggerExit(Collider other)
     {
         if (other.GetComponent<RCC_CarControllerV3>())
-        {foreach (Image i in Images)
-                i.fillAmount = 0;
+        {
+            pointsTxt.gameObject.SetActive(true);
+            RCC_CarControllerV3 car = other.GetComponent<RCC_CarControllerV3>();
+            pointsTxt.text = "+" + MyPoints + "!!!";
+            if (car.IsDrifting && circleCurrent < circlesMax)
+                circleCurrent += 1; ResetTrigger();
+            foreach (Image i in Images)
+            i.fillAmount = 0;
             ImageHolder.SetActive(false);
             MyPoints = 0;
 
         }
+    }
+
+    void ResetTrigger()
+    {
+        gameObject.GetComponent<CapsuleCollider>().enabled = false;
+        Invoke("EnableCollider", 1);
+    }
+
+    void EnableCollider()
+    {
+        gameObject.GetComponent<CapsuleCollider>().enabled = true;
+        
     }
 }
