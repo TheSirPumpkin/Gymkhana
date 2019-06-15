@@ -114,6 +114,11 @@ public class GameController : MonoBehaviour {
             levelOver = true;
 
         }
+
+        foreach (GameObject s in Singleton.instance.modes)
+        {
+            s.gameObject.SetActive(true);
+        }
         Application.LoadLevel(0);
     }
   

@@ -4,46 +4,43 @@ using UnityEngine;
 
 public class SpawnSystem : MonoBehaviour {
     public static SpawnSystem instance;
-    public Transform[] SpawnPoints, SpawnObjects;
+    GameObject[] SpawnPoints, SpawnObjects;
     float timer;
+    PointsFabric Fabric;
     // Use this for initialization
     private void Awake()
     {
         instance = this;
+        if (GameObject.Find("Standard"))
+        {
+            Fabric = new PointsStandard();
+            SpawnObjects = Resources.LoadAll<GameObject>("StandardPoints");
+            SpawnPoints = GameObject.FindGameObjectsWithTag("StandardPoint");
+        }
+
+        if (GameObject.Find("Survival"))
+        {
+            Fabric = new PointsSurvival();
+            SpawnObjects = Resources.LoadAll<GameObject>("SurvivalPoints");
+            SpawnPoints = GameObject.FindGameObjectsWithTag("SurvivalPoint");
+        }
     }
     void Start()
     {
         timer = 20;
-        foreach (Transform point in SpawnPoints)
-        {
-            Transform spawnedObject = Instantiate(SpawnObjects[Random.Range(0, SpawnObjects.Length)], point.position, new Quaternion (point.localRotation.x, point.localRotation.y, point.localRotation.z, point.localRotation.w));
-            spawnedObject.parent = point;
-            point.GetComponent<PointScript>().busy = true;
-        }
+        Fabric.Spawn(SpawnPoints, SpawnObjects);
     }
 	public void Respawn()
     {
-
-        foreach (Transform point in SpawnPoints)
-        {
-            if (point.GetComponent<PointScript>().busy == false)
-            {
-                int chance = Random.Range(0, 2);
-                if (chance != 0)
-                {
-                    Transform spawnedObject = Instantiate(SpawnObjects[Random.Range(0, SpawnObjects.Length)], point.position, new Quaternion(point.localRotation.x, point.localRotation.y, point.localRotation.z, point.localRotation.w));
-                    spawnedObject.parent = point;
-                    point.GetComponent<PointScript>().busy = true;
-                }
-            }
-        }
+       //пока не используется
+        Fabric.Spawn(SpawnPoints, SpawnObjects);
     }
 	// Update is called once per frame
 	void Update () {
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
-            Respawn();
+            Fabric.Spawn(SpawnPoints, SpawnObjects);
             timer = 20;
         }
 

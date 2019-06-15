@@ -11,7 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/MainMenu.unity
     guid: b07f174116ce0e1438ca372521fce2d8
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ANDREW DemoStart.unity
     guid: 1c00a8bec4aba824d8988409f6342a79
+  - enabled: 1
+    path: Assets/CreatedMaps/Map1/TestTestSceneDIMON.unity
+    guid: 86be96b4b7056bb489135e675f3713df
   m_configObjects: {}
