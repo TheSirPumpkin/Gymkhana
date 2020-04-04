@@ -9,12 +9,13 @@ public class RpflanDriftSC : MonoBehaviour {
     public Image[] Images;
     public GameObject ImageHolder;
     public Text pointsTxt;
+    RCC_CarControllerV3 car;
     private void OnTriggerStay(Collider other)
     {
         if (other.GetComponent<RCC_CarControllerV3>())
         {
             ImageHolder.SetActive(true);
-               RCC_CarControllerV3 car = other.GetComponent<RCC_CarControllerV3>();
+              car = other.GetComponent<RCC_CarControllerV3>();
 
             if (!car.IsDrifting && circleCurrent < circlesMax)
             {
@@ -59,7 +60,7 @@ public class RpflanDriftSC : MonoBehaviour {
         if (other.GetComponent<RCC_CarControllerV3>())
         {
             pointsTxt.gameObject.SetActive(true);
-            RCC_CarControllerV3 car = other.GetComponent<RCC_CarControllerV3>();
+           car = other.GetComponent<RCC_CarControllerV3>();
             pointsTxt.text = "+" + MyPoints + "!!!";
             if (car.IsDrifting && circleCurrent < circlesMax)
                 circleCurrent += 1; ResetTrigger();
@@ -74,11 +75,13 @@ public class RpflanDriftSC : MonoBehaviour {
     void ResetTrigger()
     {
         gameObject.GetComponent<CapsuleCollider>().enabled = false;
-        Invoke("EnableCollider", 1);
+      
+        Invoke("EnableCollider", 5);
     }
 
     void EnableCollider()
     {
+        circleCurrent = 0;
         gameObject.GetComponent<CapsuleCollider>().enabled = true;
         
     }

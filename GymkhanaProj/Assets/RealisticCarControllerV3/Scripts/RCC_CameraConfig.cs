@@ -64,7 +64,7 @@ public class RCC_CameraConfig : MonoBehaviour {
 		bool initBounds = false;
 		foreach (Renderer r in renderers)
 		{
-			if (!((r is TrailRenderer) || (r is ParticleRenderer) || (r is ParticleSystemRenderer)))
+			if (!((r is TrailRenderer)  || (r is ParticleSystemRenderer)))
 			{
 				if (!initBounds)
 				{

@@ -459,7 +459,7 @@ public static class UnityBuildSettingsUtility
 		settings.WebGLOptimizationLevel = EditorUserBuildSettings.webGLOptimizationLevel.ToString();
 #endif
 #if UNITY_5_4_OR_NEWER
-		settings.WebGLUsePreBuiltUnityEngine = EditorUserBuildSettings.webGLUsePreBuiltUnityEngine;
+	//	settings.WebGLUsePreBuiltUnityEngine = EditorUserBuildSettings.webGLUsePreBuiltUnityEngine;
 #endif
 #if UNITY_5_5_OR_NEWER
 		settings.WebGLCompressionFormat = PlayerSettings.WebGL.compressionFormat.ToString();
@@ -519,7 +519,7 @@ public static class UnityBuildSettingsUtility
 		// Windows Store App only build settings
 		// ---------------------------------------------------------------
 #if !UNITY_4
-		settings.WSAGenerateReferenceProjects = EditorUserBuildSettings.wsaGenerateReferenceProjects;
+	//	settings.WSAGenerateReferenceProjects = EditorUserBuildSettings.wsaGenerateReferenceProjects;
 #endif
 #if UNITY_5_2_AND_GREATER
 		settings.WSASDK = EditorUserBuildSettings.wsaSDK.ToString();
@@ -812,58 +812,58 @@ public static class UnityBuildSettingsUtility
 		settings.PSVNpCommsId = PlayerSettings.psp2NPCommsID;
 		settings.PSVNpCommsSig = PlayerSettings.psp2NPCommsSig;
 #else
-		settings.PSVTrophyPackagePath = PlayerSettings.PSVita.npTrophyPackPath;
-		settings.PSVParamSfxPath = PlayerSettings.PSVita.paramSfxPath;
+		//settings.PSVTrophyPackagePath = PlayerSettings.PSVita.npTrophyPackPath;
+		//settings.PSVParamSfxPath = PlayerSettings.PSVita.paramSfxPath;
 
-		settings.PSVNpCommsId = PlayerSettings.PSVita.npCommunicationsID;
-		settings.PSVNpCommsSig = PlayerSettings.PSVita.npCommsSig;
+		//settings.PSVNpCommsId = PlayerSettings.PSVita.npCommunicationsID;
+		//settings.PSVNpCommsSig = PlayerSettings.PSVita.npCommsSig;
 		
 		
-		settings.PSVBuildSubtarget = EditorUserBuildSettings.psp2BuildSubtarget.ToString();
+		//settings.PSVBuildSubtarget = EditorUserBuildSettings.psp2BuildSubtarget.ToString();
 	
-		settings.PSVShortTitle = PlayerSettings.PSVita.shortTitle;
-		settings.PSVAppVersion = PlayerSettings.PSVita.appVersion;
-		settings.PSVMasterVersion = PlayerSettings.PSVita.masterVersion;
-		settings.PSVAppCategory = PlayerSettings.PSVita.category.ToString();
-		settings.PSVContentId = PlayerSettings.PSVita.contentID;
+		//settings.PSVShortTitle = PlayerSettings.PSVita.shortTitle;
+		//settings.PSVAppVersion = PlayerSettings.PSVita.appVersion;
+		//settings.PSVMasterVersion = PlayerSettings.PSVita.masterVersion;
+		//settings.PSVAppCategory = PlayerSettings.PSVita.category.ToString();
+		//settings.PSVContentId = PlayerSettings.PSVita.contentID;
 
-		settings.PSVNpAgeRating = PlayerSettings.PSVita.npAgeRating.ToString();
-		settings.PSVParentalLevel = PlayerSettings.PSVita.parentalLevel.ToString();
+		//settings.PSVNpAgeRating = PlayerSettings.PSVita.npAgeRating.ToString();
+		//settings.PSVParentalLevel = PlayerSettings.PSVita.parentalLevel.ToString();
 
-		settings.PSVDrmType = PlayerSettings.PSVita.drmType.ToString();
-		settings.PSVUpgradable = PlayerSettings.PSVita.upgradable;
-		settings.PSVTvBootMode = PlayerSettings.PSVita.tvBootMode.ToString();
-		settings.PSVAcquireBgm = PlayerSettings.PSVita.acquireBGM;
-#if UNITY_5_2_AND_LESSER
-		settings.PSVAllowTwitterDialog = PlayerSettings.PSVita.AllowTwitterDialog;
-#endif
+		//settings.PSVDrmType = PlayerSettings.PSVita.drmType.ToString();
+		//settings.PSVUpgradable = PlayerSettings.PSVita.upgradable;
+		//settings.PSVTvBootMode = PlayerSettings.PSVita.tvBootMode.ToString();
+		//settings.PSVAcquireBgm = PlayerSettings.PSVita.acquireBGM;
+//#if UNITY_5_2_AND_LESSER
+//		settings.PSVAllowTwitterDialog = PlayerSettings.PSVita.AllowTwitterDialog;
+//#endif
 
-		settings.PSVMediaCapacity = PlayerSettings.PSVita.mediaCapacity.ToString();
-		settings.PSVStorageType = PlayerSettings.PSVita.storageType.ToString();
-		settings.PSVTvDisableEmu = PlayerSettings.PSVita.tvDisableEmu;
-		settings.PSVNpSupportGbmOrGjp = PlayerSettings.PSVita.npSupportGBMorGJP;
-		settings.PSVPowerMode = PlayerSettings.PSVita.powerMode.ToString();
-#if UNITY_5_2_AND_LESSER
-		settings.PSVUseLibLocation = PlayerSettings.PSVita.useLibLocation;
-#endif
+//		settings.PSVMediaCapacity = PlayerSettings.PSVita.mediaCapacity.ToString();
+//		settings.PSVStorageType = PlayerSettings.PSVita.storageType.ToString();
+//		settings.PSVTvDisableEmu = PlayerSettings.PSVita.tvDisableEmu;
+//		settings.PSVNpSupportGbmOrGjp = PlayerSettings.PSVita.npSupportGBMorGJP;
+//		settings.PSVPowerMode = PlayerSettings.PSVita.powerMode.ToString();
+//#if UNITY_5_2_AND_LESSER
+//		settings.PSVUseLibLocation = PlayerSettings.PSVita.useLibLocation;
+//#endif
 	
-		settings.PSVHealthWarning = PlayerSettings.PSVita.healthWarning;
-		settings.PSVEnterButtonAssignment = PlayerSettings.PSVita.enterButtonAssignment.ToString();
+//		settings.PSVHealthWarning = PlayerSettings.PSVita.healthWarning;
+//		settings.PSVEnterButtonAssignment = PlayerSettings.PSVita.enterButtonAssignment.ToString();
 	
-		settings.PSVInfoBarColor = PlayerSettings.PSVita.infoBarColor;
-		settings.PSVShowInfoBarOnStartup = PlayerSettings.PSVita.infoBarOnStartup;
-		settings.PSVSaveDataQuota = PlayerSettings.PSVita.saveDataQuota;
+//		settings.PSVInfoBarColor = PlayerSettings.PSVita.infoBarColor;
+//		settings.PSVShowInfoBarOnStartup = PlayerSettings.PSVita.infoBarOnStartup;
+//		settings.PSVSaveDataQuota = PlayerSettings.PSVita.saveDataQuota;
 	
-		// paths
-		settings.PSVPatchChangeInfoPath = PlayerSettings.PSVita.patchChangeInfoPath;
-		settings.PSVPatchOriginalPackPath = PlayerSettings.PSVita.patchOriginalPackage;
-		settings.PSVKeystoneFilePath = PlayerSettings.PSVita.keystoneFile;
-		settings.PSVLiveAreaBgImagePath = PlayerSettings.PSVita.liveAreaBackroundPath;
-		settings.PSVLiveAreaGateImagePath = PlayerSettings.PSVita.liveAreaGatePath;
-		settings.PSVCustomLiveAreaPath = PlayerSettings.PSVita.liveAreaPath;
-		settings.PSVLiveAreaTrialPath = PlayerSettings.PSVita.liveAreaTrialPath;
+//		// paths
+//		settings.PSVPatchChangeInfoPath = PlayerSettings.PSVita.patchChangeInfoPath;
+//		settings.PSVPatchOriginalPackPath = PlayerSettings.PSVita.patchOriginalPackage;
+//		settings.PSVKeystoneFilePath = PlayerSettings.PSVita.keystoneFile;
+//		settings.PSVLiveAreaBgImagePath = PlayerSettings.PSVita.liveAreaBackroundPath;
+//		settings.PSVLiveAreaGateImagePath = PlayerSettings.PSVita.liveAreaGatePath;
+//		settings.PSVCustomLiveAreaPath = PlayerSettings.PSVita.liveAreaPath;
+//		settings.PSVLiveAreaTrialPath = PlayerSettings.PSVita.liveAreaTrialPath;
 
-		settings.PSVManualPath = PlayerSettings.PSVita.manualPath;
+//		settings.PSVManualPath = PlayerSettings.PSVita.manualPath;
 #endif
 	}
 
