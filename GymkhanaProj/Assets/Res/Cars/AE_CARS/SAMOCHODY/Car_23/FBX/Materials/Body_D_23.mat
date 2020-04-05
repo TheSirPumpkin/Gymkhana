@@ -34,11 +34,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 374e6d073016d71498539243b4d7d228, type: 3}
+        m_Texture: {fileID: 2800000, guid: 26b98c85be087da46a67e49787b565d1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: f58203b4a03cf894e961dbd0079c6ced, type: 3}
+        m_Texture: {fileID: 2800000, guid: 84f7b3b05a62ffe48a36a6dd70b451fc, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Cube:
@@ -50,7 +50,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 374e6d073016d71498539243b4d7d228, type: 3}
+        m_Texture: {fileID: 2800000, guid: 26b98c85be087da46a67e49787b565d1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
@@ -67,8 +67,8 @@ Material:
     - _GlossinessSource: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Shininess: 0.071379885
-    - _Smoothness: 0.071379885
+    - _Shininess: 0.1
+    - _Smoothness: 0.1
     - _SmoothnessSource: 1
     - _SpecSource: 0
     - _SpecularHighlights: 0
@@ -76,8 +76,8 @@ Material:
     - _Surface: 0
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.77205884, g: 0.5114694, b: 0.045415223, a: 0.071379885}
-    - _Color: {r: 0.77205884, g: 0.5114694, b: 0.045415223, a: 1}
+    - _BaseColor: {r: 0.70980394, g: 0.023529414, b: 0.04705883, a: 0.1}
+    - _Color: {r: 0.89019614, g: 0.7686275, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _ReflectColor: {r: 0.5588235, g: 0.38936284, b: 0.086288944, a: 0.5019608}
     - _SpecColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
