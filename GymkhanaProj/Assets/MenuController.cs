@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MenuController : MonoBehaviour {
+public class MenuController : MonoBehaviour
+{
+    public GameObject SingleMode;
+    public GameObject CoopMode;
     public GameObject Locked;
     public Text pointsText, carCost;
     public int ptsInt;
@@ -16,20 +19,34 @@ public class MenuController : MonoBehaviour {
         PlayerPrefs.DeleteAll();
     }
 
+    public void SelectRaceMode(int map)
+    {
+        if (PlayerPrefs.GetInt("Single") == 1)
+        {
+            SingleMode.SetActive(true);
+        }
+
+        if (PlayerPrefs.GetInt("Single") == 0)
+        {
+            CoopMode.SetActive(true);
+        }
+        PlayerPrefs.SetInt("Map", map);
+    }
+
     public void SetMode(int mode)
     {
         if (mode == 1)
-        {  PlayerPrefs.SetInt("Player1Car", 0);
-            foreach(GameObject car in player1Cars)
+        {
+            PlayerPrefs.SetInt("Player1Car", 0);
+            foreach (GameObject car in player1Cars)
             {
                 car.SetActive(false);
             }
             player1Cars[PlayerPrefs.GetInt("Player1Car")].SetActive(true);
             PlayerPrefs.SetInt("Single", 1);
         }
-            if (mode == 2)
+        if (mode == 2)
         {
-          
             PlayerPrefs.SetInt("Single", 0);
         }
     }
@@ -48,7 +65,7 @@ public class MenuController : MonoBehaviour {
         {
             foreach (GameObject car in player1Cars)
             {
-                if (car.activeSelf == true&&ptsInt>= car.GetComponent<ColorChanger>().price)
+                if (car.activeSelf == true && ptsInt >= car.GetComponent<ColorChanger>().price)
                 {
                     PlayerPrefs.SetInt("CarBought" + car.name, 1);
                     PlayerPrefs.SetInt("Player1Car", car.GetComponent<ColorChanger>().ID);
@@ -56,13 +73,12 @@ public class MenuController : MonoBehaviour {
                     ptsInt -= car.GetComponent<ColorChanger>().price;
                     PlayerPrefs.SetInt("Points", ptsInt);
 
-
-
                 }
             }
         }
     }
-	void Start () {
+    void Start()
+    {
         if (PlayerPrefs.GetInt("FirstStart") != 1)
         {
             PlayerPrefs.SetInt("Sound", 1);
@@ -72,10 +88,10 @@ public class MenuController : MonoBehaviour {
 
         Garter.I.CallAd(1);
         ptsInt = PlayerPrefs.GetInt("Points");
-        PlayerPrefs.SetInt("CarBought" + player1Cars[0].name,1);
-Time.timeScale = 1;
-       // PlayerPrefs.SetInt("Player1Car", 0);
-       //  PlayerPrefs.SetInt("Player2Car", 0);
+        PlayerPrefs.SetInt("CarBought" + player1Cars[0].name, 1);
+        Time.timeScale = 1;
+        // PlayerPrefs.SetInt("Player1Car", 0);
+        //  PlayerPrefs.SetInt("Player2Car", 0);
         player1Cars[PlayerPrefs.GetInt("Player1Car")].SetActive(true);
         player2Cars[PlayerPrefs.GetInt("Player2Car")].SetActive(true);
     }
@@ -95,14 +111,15 @@ Time.timeScale = 1;
                             if (PlayerPrefs.GetInt("Single") == 1)
                             {
 
-                                if (PlayerPrefs.GetInt("CarBought" + player1Cars[i+1].name) == 1)
+                                if (PlayerPrefs.GetInt("CarBought" + player1Cars[i + 1].name) == 1)
                                 {
                                     PlayerPrefs.SetInt("Player1Car", i + 1);
                                 }
-                            } else PlayerPrefs.SetInt("Player1Car", i + 1);
+                            }
+                            else PlayerPrefs.SetInt("Player1Car", i + 1);
                             player1Cars[i + 1].SetActive(true);
-                           
-                          
+
+
                             return;
                         }
                         if (i >= player1Cars.Length - 1)
@@ -147,7 +164,7 @@ Time.timeScale = 1;
                             else PlayerPrefs.SetInt("Player1Car", i - 1);
 
                             player1Cars[i - 1].SetActive(true);
-                            
+
                             return;
                         }
                         if (i <= 0)
@@ -275,15 +292,15 @@ Time.timeScale = 1;
             //ті хуй
             if (!next)
             {
-                for (int j = player2Cars.Length-1; j > -1; j--)
+                for (int j = player2Cars.Length - 1; j > -1; j--)
                 {
-                    for (int i = colors.Length-1; i > -1; i--)
+                    for (int i = colors.Length - 1; i > -1; i--)
                     {
                         //Debug.Log(j);
                         //Debug.Log(i);
                         if (player2Cars[j].GetComponentInChildren<Renderer>().sharedMaterial.color == colors[i])
                         {
-                            if (i >0)
+                            if (i > 0)
                             {
                                 player2Cars[0].GetComponentInChildren<Renderer>().sharedMaterial.color = colors[i - 1];
                                 player2Cars[1].GetComponentInChildren<Renderer>().sharedMaterial.color = colors[i - 1];
@@ -416,11 +433,12 @@ Time.timeScale = 1;
     }
     public void PlayGame()
     {
-        Application.LoadLevel(1);
+        Application.LoadLevel(PlayerPrefs.GetInt("Map"));
     }
     // Update is called once per frame
-    void Update () {
-        pointsText.text = "YOU HAVE: " + ptsInt+" PTS";
+    void Update()
+    {
+        pointsText.text = "YOU HAVE: " + ptsInt + " PTS";
         ptsInt = PlayerPrefs.GetInt("Points");
         if (PlayerPrefs.GetInt("Single") == 1)
         {
@@ -442,9 +460,9 @@ Time.timeScale = 1;
             }
         }
         if (Input.GetKeyDown(KeyCode.UpArrow))
-            ChangeCar(true,2);
+            ChangeCar(true, 2);
         if (Input.GetKeyDown(KeyCode.DownArrow))
-            ChangeCar(false,2);
+            ChangeCar(false, 2);
         if (Input.GetKeyDown(KeyCode.RightArrow))
             ChangeColor(true, 2);
         if (Input.GetKeyDown(KeyCode.LeftArrow))
@@ -459,9 +477,6 @@ Time.timeScale = 1;
             ChangeColor(true, 1);
         if (Input.GetKeyDown(KeyCode.A))
             ChangeColor(false, 1);
-
-
-
     }
     public void VK()
     {
